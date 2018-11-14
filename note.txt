@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# note.txt - must be in the same dir and be root to run these:
+cp managerestarts.sh /usr/local/nagiosxi/scripts/.
+cp nxiservrestart /etc/cron.daily/.
+cp sendrestarts.sh /usr/local/nagiosxi/scripts/.
+chown root:root /etc/cron.daily/nxiservrestart
+chown nagios:nagios /usr/local/nagiosxi/scripts/managerestarts.sh
+chown nagios:nagios /usr/local/nagiosxi/scripts/sendrestarts.sh

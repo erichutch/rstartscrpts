@@ -1,0 +1,8 @@
+# add this file nxiservrestart to /etc/cron.daily/
+# Eric H - 02/02/2018
+/usr/local/nagiosxi/scripts/sendrestarts.sh
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+mail -s "Daily cron restart of Nagios XI processes `hostname` failed" globalservicedesk@researchnow.com < /tmp/timelog.log
+fi
+exit 0
